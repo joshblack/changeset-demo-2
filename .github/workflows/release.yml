@@ -25,6 +25,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > "$HOME/.npmrc"
+          echo '@joshblack:registry=https://npm.pkg.github.com/' >> "$HOME/.npmrc"
       - name: Create Release Pull Request
         uses: changesets/action@master
         env:
