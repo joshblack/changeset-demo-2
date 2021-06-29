@@ -1,0 +1,14 @@
+{
+  "name": "changeset-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:joshblack/changeset-demo.git",
+  "author": "Josh Black <josh@josh.black>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@changesets/cli": "^2.16.0"
+  }
+}

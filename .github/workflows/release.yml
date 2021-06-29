@@ -1,0 +1,33 @@
+name: release
+on:
+  workflow_dispatch:
+
+jobs:
+  ghpr:
+    if: github.repository == 'joshblack/changeset-demo'
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js 14.x
+        uses: actions/setup-node@master
+        with:
+          node-version: 14.x
+      - name: Install dependencies
+        run: yarn install --immutable --immutable-cache
+      - name: Create .npmrc file
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > .npmrc
+      - name: Create Release Pull Request
+        uses: changesets/action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          commit: "chore(project): run changeset version"
+          version: yarn changeset version
+          publish: yarn changeset publish
