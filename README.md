@@ -34,11 +34,13 @@ GitHub Actions
 
 - [ ] Install the [`changeset-bot`](https://github.com/apps/changeset-bot) to your repo
 
-Links & Resources:
+**Links & Resources**
 
 - [`changeset/config.json` options](https://github.com/atlassian/changesets/blob/main/docs/config-file-options.md)
 - [Automating
   changesets](https://github.com/atlassian/changesets/blob/main/docs/automating-changesets.md)
+- [Publishing multiple packages to the same
+  registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#publishing-multiple-packages-to-the-same-repository)
 
 TODO:
 
