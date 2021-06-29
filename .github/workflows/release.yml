@@ -1,6 +1,8 @@
 name: release
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   ghpr:
@@ -28,6 +30,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          title: "Scheduled release"
           commit: "chore(project): run changeset version"
           version: yarn changeset version
           publish: yarn changeset publish
