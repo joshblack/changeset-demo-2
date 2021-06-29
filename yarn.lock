@@ -257,13 +257,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@joshblack/add@workspace:packages/add":
+"@joshblack/add@^0.1.0, @joshblack/add@workspace:packages/add":
   version: 0.0.0-use.local
   resolution: "@joshblack/add@workspace:packages/add"
   languageName: unknown
   linkType: soft
 
-"@joshblack/sub@workspace:packages/sub":
+"@joshblack/math@workspace:packages/math":
+  version: 0.0.0-use.local
+  resolution: "@joshblack/math@workspace:packages/math"
+  dependencies:
+    "@joshblack/add": ^0.1.0
+    "@joshblack/sub": ^0.1.0
+  languageName: unknown
+  linkType: soft
+
+"@joshblack/sub@^0.1.0, @joshblack/sub@workspace:packages/sub":
   version: 0.0.0-use.local
   resolution: "@joshblack/sub@workspace:packages/sub"
   languageName: unknown
